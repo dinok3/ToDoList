@@ -1,0 +1,22 @@
+{%extends "main/base.html"%}
+{% load crispy_forms_tags%}
+{%block content%}
+
+
+<div class="container">
+		<div class="register">
+			<form method="POST">
+				{%csrf_token%}
+
+
+                <h1>Are You Sure You Want To Delete Todolist '{{object.name}}'?</h1>
+				<button class="btn  btn-outline-info" type="submit">Yes,sure!</button>
+				<a href="/">Cancel</a>
+				</small>
+			</form>
+		</div>
+
+	</div>
+
+
+{%endblock%}

@@ -1,0 +1,252 @@
+
+.title{
+    color:white;
+    background-color:#33cc33;
+    min-height: 300px;
+    text-align:center;
+    justify-content:center;
+    padding-top:40px;
+
+}
+
+.title h1{
+    font-size:60px;
+    margin-top:50px;
+}
+
+.inputtext{
+  display:flex;
+   display:inline;
+}
+
+.pimage{
+    width:5rem;
+    height:5rem;
+    border-radius: 50%;
+}
+
+.ln a {
+    color:white;
+    display:flex;
+    display:inline;
+}
+
+
+.year {
+  margin-top:5rem;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+
+
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+   flex-shrink: 3;
+}
+
+
+.cards{
+    display:flex;
+    justify-content:center;
+    padding-right:10px;
+}
+
+.footer{
+
+   width: 100%;
+   margin-top:60px;
+   color: white;
+   text-align: center;
+}
+
+.message{
+    position:fixed;
+    top:0;
+    right:0;
+    background-color:blue;
+    color:white;
+    font-size:30px;
+
+}
+
+.binput{
+    margin-top:2rem;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+input{
+    border-radius:3%;
+}
+
+.inputtext{
+
+}
+
+
+
+
+.register a{
+    text-decoration:none;
+}
+.register a:hover{
+    text-decoration:none;
+    color:#33cc33;
+    border:solid 1px #33cc33;
+    padding:7px;
+    margin-top:2px;
+}
+.register {
+    margin-top:50px;
+    width:50rem;
+    margin-left:5rem;
+    color:#1496e0;
+     border:dotted 2px #1496e0;
+    padding:50px;
+    margin:50px;
+
+}
+
+
+.login{
+    border:dotted 2px #1496e0;
+    padding:50px;
+    margin:50px;
+
+}
+
+/*footer*/
+
+
+.counters {
+	background: #0f479a;
+	color: #fff;
+	padding: 40px 20px;
+	border-top: 3px lightskyblue solid;
+
+}
+
+.counters .container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+	text-align: center;
+}
+
+.counters i {
+	color: lightskyblue;
+	margin-bottom: 5px;
+}
+
+.counters .counter {
+	font-size: 45px;
+	margin: 10px 0;
+}
+
+
+
+
+
+
+/*NAVBAR(FLEXBOX)*/
+
+.container1{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+    background-color: #0f479a;
+    color:white;
+
+
+
+}
+.item1 form{
+    padding-top:14px;
+
+}
+.container1 .item3 a {
+    color:white;
+    align-self:center;
+}
+.container1 .item3 a:hover{
+    color:#33cc33;
+    font-weight:bold;
+
+
+
+}
+.item3{
+    display:flex;
+
+
+
+}
+
+.profili{
+    height:40rem;
+    margin-top:5rem;
+
+
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+
+
+
+
+.card-body{
+    display:block;
+}
+
+.my_filter{
+      text-align:left;
+      display:block;
+}
+
+/*NAVBAR(FLEXBOX)*/
+.item1{
+    padding-top:14px;
+    order:3;
+}
+
+.item3{
+    display:flex;
+    order:1;
+
+
+}
+
+input{
+    display:block;
+}
+
+
+
+}
+
+
+
+

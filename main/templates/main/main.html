@@ -1,0 +1,114 @@
+{%extends "main/base.html"%}
+{%load static%}
+{% load crispy_forms_tags %}
+{%block content%}
+
+
+<div class="container1">
+
+    <div class="item1" >
+
+        <form method="get">
+
+            {{filterset.form|crispy}}
+            <button class="btn btn-success" type="submit" style="display:flex;justify-content:center;">Search</button>
+        </form>
+
+
+
+
+ </div>
+
+
+</div>
+
+
+    <br><br>
+<div class="row" style="min-height:600px;">
+    {%for todo in todos%}
+
+        <div class="col-sm-4">
+        <div class="cards">
+
+
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="{{todo.author.profile.image.url}}" alt="Card image" >
+                <div class="card-body">
+                  <h4 class="card-title">{{todo.author}}</h4>
+                  <p class="card-text">{{todo.name}}   </p>
+                    <small class="text-muted">{{todo.date_created|date:"d.m.Y."}}</small>
+                    <br>
+                    <a href="{%url 'todolist-detail' todo.id%}" class="btn btn-primary">To do </a>
+                    <a href="{%url 'todolist-update' todo.id %}" type="submit" class="btn btn-success"  name="update">Update</a>
+                    <a href="{%url 'todolist-delete' todo.id %}" type="submit" class="btn btn-danger"  style="float:right;" name="delete">Delete</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+      {%endfor%}
+
+
+
+
+</div>
+<div class="container" style="display:flex;justify-content:center;">
+{%if is_paginated%}
+        {%if page_obj.has_previous%}
+            <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{page_obj.previous_page_number}}">Previous</a>
+        {%endif%}
+
+
+        {% for num in page_obj.paginator.page_range %}
+            {%if page_obj.number == num%}
+                <a class="btn btn-info mb-4" href="?page={{num}}">{{num}}</a>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3'%}
+                    <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{num}}</a>
+            {%endif%}
+        {%endfor%}
+
+        {%if page_obj.has_next%}
+            <a class="btn btn-outline-info mb-4" href="?page={{page_obj.next_page_number}}">Next</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages}}">Last</a>
+        {%endif%}
+
+    {%endif%}
+
+</div>
+{%endblock%}
+
+<!--
+>>> from django.core.paginator import Paginator
+>>> posts = ["1","2","3","4"]
+>>> p = Paginator(posts,2)
+>>> p
+<django.core.paginator.Paginator object at 0x000001CF918E5828>
+>>> p.num_pages
+2
+>>> for page in p.page_range:
+...     print(page)
+...
+1
+2
+>>> p1 = p.page(1)
+>>> p1
+<Page 1 of 2>
+>>> p1.number
+1
+>>> p1.objects_list
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Page' object has no attribute 'objects_list'
+>>> p1.object_list
+['1', '2']
+>>> p1.has_previous
+<bound method Page.has_previous of <Page 1 of 2>>
+>>> p1.has_previous()
+False
+>>> p1.has_next()
+True
+>>> exit()
+
+-->

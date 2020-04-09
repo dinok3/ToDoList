@@ -1,0 +1,52 @@
+{%extends "main/base.html"%}
+{%load static%}
+{% load crispy_forms_tags %}
+
+
+{%block content%}
+
+<form  method="post" action="#" >
+            {%csrf_token%}
+            <div class="row" style="min-height:600px;">
+                    {%if items.checked == True%}
+                         <div class="col-sm-4">
+                            <div class="cards">
+                                <div class="card" style="width:400px;align-items:flex-baseline;align-content:flex-center;">
+                                    <div class="card-body" style="float:left;">
+                                        <h4 class="card-title"><a href="">{{items}}</a>
+                                            <div style="float:right;">
+
+                                                <button type="submit" class="btn btn-success"  value="update" name="update">Update</button>
+                                                <a type="submit" class="btn btn-danger" value="delete" name="delete">Delete</a>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {%else%}
+                        <div class="col-sm-4">
+                            <div class="cards">
+                                <div class="card" style="width:400px">
+                                    <div class="card-body" style="float:left;">
+                                        <h4 class="card-title"><a href="">{{items}}</a>
+                                            <div style="float:right;">
+
+
+                                                <button type="submit" class="btn btn-success"  value="update" name="update">Update</button>
+
+                                                <button type="submit" class="btn btn-danger" value="delete" name="delete">Delete</button>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {%endif%}
+
+            </div>
+
+
+
+</form>
+{%endblock%}
