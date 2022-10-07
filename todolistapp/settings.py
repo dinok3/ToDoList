@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     "main.apps.MainConfig",
     "users.apps.UsersConfig",
     "django_filters",
@@ -131,3 +132,4 @@ LOGIN_REDIRECT_URL = "home-page"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 CRISPY_CLASS_CONVERTERS = {'textinput': "inputtext"}
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

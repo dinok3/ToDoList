@@ -49,23 +49,3 @@ def save_profile(sender, instance, created, **kwargs):
 
 
 
-"""
->>> from django.contrib.auth.models import User
->>> user = User.objects.filter(username="dino")
->>> user = User.objects.filter(username="dino").first()
->>> user
-<User: dino>
->>> user.profile
-<Profile: dino Profile>
->>> user.profile.image
-<ImageFieldFile: profile_pics/kriteriji1.jpg>
->>> user.profile.image.width
-765
->>> user.profile.image.height
-185
->>> user.profile.image.size
-25252
->>> user.profile.image.url
-'/media/profile_pics/kriteriji1.jpg'
-
-"""
