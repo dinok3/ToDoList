@@ -12,7 +12,7 @@ django-filters for filtering to do lists, authentication and login, signals, for
 ## Installation
 
 ```
-git clone https://github.com/krivke/ToDoList.git
+git clone https://github.com/dinok3/ToDoList.git
 cd ToDoList
 pip install -r requirements.txt
 py manage.py migrate
